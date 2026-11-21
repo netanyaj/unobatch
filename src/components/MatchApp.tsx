@@ -10,6 +10,13 @@ import BriefForm, { EMPTY_BRIEF } from "./BriefForm";
 import IssueReview from "./IssueReview";
 import PartnerCard, { type CardStatus } from "./PartnerCard";
 import PartnerDrawer from "./PartnerDrawer";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { cn } from "@/lib/utils";
+import { ArrowLeft, ArrowRight, ChevronDown, ChevronRight, TriangleAlert, X } from "lucide-react";
 
 type View = "form" | "issues" | "results";
 
@@ -25,23 +32,22 @@ const FACTORS: [keyof typeof WEIGHTS, string][] = [
 
 function ScoreHelp() {
   return (
-    <details className="rounded-lg border border-stone-200 bg-white p-4 text-sm">
-      <summary className="cursor-pointer font-medium">How the score works</summary>
-      <p className="mt-3 text-stone-600">
+    <div className="rounded-md bg-muted p-3 text-sm">
+      <p className="text-muted-foreground">
         First we remove partners who can&apos;t do the job: wrong category, can&apos;t handle your storage, or your
         batch is outside their range. Then we score the rest out of 100:
       </p>
-      <table className="mt-2 w-full">
-        <tbody>
+      <Table className="mt-2">
+        <TableBody>
           {FACTORS.map(([k, text]) => (
-            <tr key={k} className="border-t border-stone-100">
-              <td className="w-12 py-1.5 font-medium tabular-nums">{WEIGHTS[k]}</td>
-              <td className="py-1.5 text-stone-700">{text}</td>
-            </tr>
+            <TableRow key={k} className="hover:bg-transparent">
+              <TableCell className="w-10 py-1.5 font-medium tabular-nums">{WEIGHTS[k]}</TableCell>
+              <TableCell className="whitespace-normal py-1.5">{text}</TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
-    </details>
+        </TableBody>
+      </Table>
+    </div>
   );
 }
 
@@ -57,6 +63,7 @@ export default function MatchApp() {
   const [status, setStatus] = useState<Record<string, CardStatus>>({});
   const [drawer, setDrawer] = useState<Partner | null>(null);
   const [busy, setBusy] = useState(false);
+  const [open, setOpen] = useState<number | null>(null);
 
   const loadOutcomes = async () => {
     const r = await fetch("/api/outcomes").then((r) => r.json());
@@ -84,7 +91,7 @@ export default function MatchApp() {
 
   const confirm = async (b: Brief = brief) => {
     setBusy(true);
-    setPrevScores({}); setChanged(null); setStatus({});
+    setPrevScores({}); setChanged(null); setStatus({}); setOpen(null);
     await runMatch(b, true);
     setBusy(false);
     setView("results");
@@ -117,78 +124,154 @@ export default function MatchApp() {
     );
 
   const issueLabels = ISSUES.filter((i) => brief.issues.includes(i.id)).map((i) => i.label);
+  const steps = result?.steps ?? [];
+  const current = open != null ? steps[open] : undefined;
+  const gapCount = steps.filter((s) => s.gap).length;
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-start justify-between gap-6">
-        <div>
-          <button onClick={() => setView("form")} className="text-sm text-stone-500 hover:text-stone-800">← Edit brief</button>
-          <h1 className="mt-1 text-2xl font-semibold tracking-tight">{brief.productName || categoryLabel(brief.category)}</h1>
-          <p className="mt-1 text-sm text-stone-600">
+    <div className="space-y-5">
+      {/* Brief summary */}
+      <div>
+        <Button variant="ghost" size="sm" className="-ml-3 text-muted-foreground" onClick={() => setView("form")}>
+          <ArrowLeft />Edit brief
+        </Button>
+        <div className="mt-1 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+          <h1 className="text-2xl font-semibold tracking-tight">{brief.productName || categoryLabel(brief.category)}</h1>
+          <p className="text-sm text-muted-foreground">
             {categoryLabel(brief.category)} · {STAGES.find((s) => s.id === brief.stage)?.label} · {brief.storage} ·{" "}
-            {brief.shelfLifeDays} days shelf life · {brief.batchKg.toLocaleString("en-IN")} kg first batch · {brief.city}
-            {brief.claims.length > 0 && <> · {brief.claims.join(", ")}</>}
+            {brief.batchKg.toLocaleString("en-IN")} kg first batch · {brief.city}
           </p>
-          {issueLabels.length > 0 && (
-            <p className="mt-1 text-sm text-stone-600">Stuck on: {issueLabels.join(", ")}</p>
-          )}
         </div>
-        {storage === "memory" && (
-          <div className="max-w-xs rounded-md border border-stone-200 bg-white px-3 py-2 text-xs text-stone-500">
-            No database connected, so logged outcomes last until the server restarts.
+        {issueLabels.length > 0 && (
+          <div className="mt-2 flex flex-wrap items-center gap-1.5 text-sm">
+            <span className="text-muted-foreground">Stuck on</span>
+            {issueLabels.map((l) => <Badge key={l} variant="secondary">{l}</Badge>)}
           </div>
         )}
       </div>
 
-      {result && result.gaps.length > 0 && (
-        <div className="rounded-lg border border-amber-300 bg-amber-50 p-4">
-          <div className="text-sm font-semibold text-amber-900">Gaps in the network for this brief</div>
-          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-amber-900">
-            {result.gaps.map((g, i) => <li key={i}>{g}</li>)}
-          </ul>
-          <Link href="/gaps" className="mt-2 inline-block text-sm font-medium text-amber-900 underline">
-            See all network gaps →
-          </Link>
-        </div>
-      )}
+      <div className={cn("items-start gap-5", open != null && "grid grid-cols-[minmax(0,1fr)_440px]")}>
+        {/* Summary table: one row per step */}
+        <Card className="gap-0 py-0">
+          <Collapsible>
+            <CardHeader className="border-b py-4 [.border-b]:pb-4">
+              <CardTitle className="text-base">Path to a first batch: {steps.length} steps</CardTitle>
+              <CardDescription>
+                {gapCount > 0
+                  ? <span className="text-amber-700">{gapCount} {gapCount === 1 ? "step has" : "steps have"} a gap in the network</span>
+                  : "Every step has a partner who fits"}
+              </CardDescription>
+              <CardAction>
+                <CollapsibleTrigger asChild>
+                  <Button variant="ghost" size="sm" className="group text-muted-foreground">
+                    How the score works <ChevronDown className="transition-transform group-data-[state=open]:rotate-180" />
+                  </Button>
+                </CollapsibleTrigger>
+              </CardAction>
+            </CardHeader>
+            <CollapsibleContent className="border-b p-4"><ScoreHelp /></CollapsibleContent>
+          </Collapsible>
 
-      <ScoreHelp />
-
-      <ol className="space-y-6">
-        {result?.steps.map((step, i) => (
-          <li key={step.type} className="relative rounded-xl border border-stone-200 bg-white p-5">
-            <div className="flex items-baseline gap-3">
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-stone-900 text-sm font-medium text-white">{i + 1}</span>
-              <div className="flex-1">
-                <h2 className="font-semibold">{step.title}</h2>
-                <p className="text-sm text-stone-600">{step.why}</p>
-              </div>
-              <span className="text-xs text-stone-500">
-                {step.passedFilters} of {step.candidates} passed the filters
-              </span>
+          <Table>
+            <TableHeader>
+              <TableRow className="hover:bg-transparent">
+                <TableHead className="w-10 pl-6 text-muted-foreground">#</TableHead>
+                <TableHead className="text-muted-foreground">Step</TableHead>
+                <TableHead className="text-muted-foreground">Best match</TableHead>
+                <TableHead className="w-16 text-right text-muted-foreground">Score</TableHead>
+                <TableHead className="text-muted-foreground">Status</TableHead>
+                <TableHead className="w-10" />
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {steps.map((step, i) => {
+                const top = step.matches[0];
+                const on = i === open;
+                return (
+                  <TableRow key={step.type} data-state={on ? "selected" : undefined}
+                    className="cursor-pointer" onClick={() => setOpen(on ? null : i)}>
+                    <TableCell className="pl-6 align-top tabular-nums text-muted-foreground">{i + 1}</TableCell>
+                    <TableCell className="whitespace-normal align-top">
+                      <div className="font-medium">{step.title}</div>
+                      {open == null && <div className="text-xs text-muted-foreground">{step.why}</div>}
+                    </TableCell>
+                    <TableCell className="whitespace-normal align-top">
+                      {top ? (
+                        <>
+                          <div>{top.partner.name}</div>
+                          <div className="text-xs text-muted-foreground">
+                            {top.partner.city}{step.matches.length > 1 && <> · {step.matches.length - 1} more</>}
+                          </div>
+                        </>
+                      ) : <span className="text-muted-foreground">No partner fits</span>}
+                    </TableCell>
+                    <TableCell className="text-right align-top text-base font-semibold tabular-nums">{top?.score ?? "–"}</TableCell>
+                    <TableCell className="whitespace-normal align-top">
+                      {step.gap
+                        ? <Badge variant="outline" className="border-amber-300 bg-amber-50 text-amber-800"><TriangleAlert />Gap</Badge>
+                        : <Badge variant="outline" className="border-emerald-200 bg-emerald-50 text-emerald-700">Covered</Badge>}
+                      {step.gap && open == null && <div className="mt-1 max-w-xs text-xs text-amber-800">{step.gap}</div>}
+                    </TableCell>
+                    <TableCell className="pr-4 text-right align-top text-muted-foreground"><ChevronRight className="ml-auto size-4" /></TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+          {open == null && (
+            <div className="border-t px-6 py-3 text-xs text-muted-foreground">
+              Click a step to see the top 3 partners and why they scored the way they did.
             </div>
+          )}
+        </Card>
 
-            {step.gap && (
-              <div className="mt-3 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
-                <span className="font-medium">Gap:</span> {step.gap}
-              </div>
-            )}
+        {/* Side panel for the selected step */}
+        {current && open != null && (
+          <Card className="sticky top-20 max-h-[calc(100vh-6rem)] gap-4 overflow-y-auto py-4">
+            <CardHeader className="px-4">
+              <CardDescription className="text-xs">
+                Step {open + 1} of {steps.length} · {current.passedFilters} of {current.candidates} partners can do this job
+              </CardDescription>
+              <CardTitle className="text-lg">{current.title}</CardTitle>
+              <CardDescription>{current.why}</CardDescription>
+              <CardAction>
+                <Button variant="ghost" size="icon-sm" onClick={() => setOpen(null)} aria-label="Close"><X /></Button>
+              </CardAction>
+            </CardHeader>
 
-            {step.matches.length > 0 && (
-              <div className="mt-4 grid grid-cols-3 gap-3">
-                {step.matches.map((m, idx) => (
-                  <PartnerCard key={m.partner.id} s={m} rank={idx + 1}
-                    delta={m.partner.id === changed && prevScores[m.partner.id] != null ? m.score - prevScores[m.partner.id] : null}
-                    status={status[m.partner.id] ?? { state: "none" }}
-                    onDetails={() => setDrawer(m.partner)}
-                    onPick={() => logOutcome(m.partner.id, "picked")}
-                    onLog={(r, note) => logOutcome(m.partner.id, r, note)} />
-                ))}
+            <CardContent className="space-y-3 px-4">
+              {current.gap && (
+                <div className="rounded-md border border-amber-300 bg-amber-50 px-3 py-2.5 text-sm text-amber-900">
+                  <div className="flex items-center gap-1.5 font-semibold"><TriangleAlert className="size-4" />Gap in the network</div>
+                  <div className="mt-0.5">{current.gap}</div>
+                  {current.recruit && <div className="mt-1 text-amber-800">Recruit: {current.recruit}</div>}
+                </div>
+              )}
+
+              {current.matches.map((m, idx) => (
+                <PartnerCard key={m.partner.id} s={m} rank={idx + 1}
+                  delta={m.partner.id === changed && prevScores[m.partner.id] != null ? m.score - prevScores[m.partner.id] : null}
+                  status={status[m.partner.id] ?? { state: "none" }}
+                  onDetails={() => setDrawer(m.partner)}
+                  onPick={() => logOutcome(m.partner.id, "picked")}
+                  onLog={(r, note) => logOutcome(m.partner.id, r, note)} />
+              ))}
+
+              <div className="flex justify-between pt-1">
+                <Button variant="ghost" size="sm" disabled={open === 0} className={open === 0 ? "invisible" : ""}
+                  onClick={() => setOpen(open - 1)}><ArrowLeft />Previous</Button>
+                {open < steps.length - 1
+                  ? <Button variant="outline" size="sm" onClick={() => setOpen(open + 1)}>Next: {steps[open + 1].title}<ArrowRight /></Button>
+                  : gapCount > 0 && <Button variant="outline" size="sm" asChild><Link href="/gaps">See all network gaps<ArrowRight /></Link></Button>}
               </div>
-            )}
-          </li>
-        ))}
-      </ol>
+            </CardContent>
+          </Card>
+        )}
+      </div>
+
+      {storage === "memory" && (
+        <p className="text-xs text-muted-foreground">No database connected, so logged outcomes last until the server restarts.</p>
+      )}
 
       <PartnerDrawer partner={drawer} logged={logged} onClose={() => setDrawer(null)} />
     </div>

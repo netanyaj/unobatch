@@ -11,7 +11,7 @@ The point: matching should be explainable and checkable, not a black box. The ga
 1. **Brief.** Category, stage, claims, storage, target shelf life, first batch size, city, and a free-text "where are you stuck" box.
 2. **What we understood.** The stuck box is turned into problem tags, for example "texture problem" or "shelf life too short". You can add or remove tags before matching.
 3. **Project path.** The tool picks which kinds of partner are needed (technologist, ingredient supplier, lab, pilot facility, packaging, manufacturer) and in what order. The order depends on the stage and the problem tags.
-4. **Ranked partners.** Each step shows the top 3 partners. Every score is broken into reason chips, and the reasons explain the whole score. Any gap is called out in that step.
+4. **Ranked partners.** A summary table shows every step with its best partner, score and whether the network covers it. Click a row to open a side panel with the top 3 partners. "Why 82?" breaks each score into reasons that add up to the total. Any gap is called out in that step.
 5. **Partner details.** Click a name to see all fields and past intros.
 6. **Outcome logging.** Pick a partner, then log how it went: intro accepted, declined, project went ahead, or didn't work, with a reason. The list re-ranks straight away and shows the score change.
 7. **Network gaps.** A summary of the gaps across every brief so far, grouped by the kind of partner to recruit.
@@ -69,4 +69,4 @@ Only one place uses AI: turning the "where are you stuck" text into problem tags
 
 ## Stack
 
-Next.js 15 (App Router) with TypeScript and Tailwind. Partner data is a JSON file. Outcomes and briefs go to Neon Postgres when `DATABASE_URL` is set. There is no login.
+Next.js 15 (App Router) with TypeScript, Tailwind and shadcn/ui (components in `src/components/ui`, settings in `components.json`). Partner data is a JSON file. Outcomes and briefs go to Neon Postgres when `DATABASE_URL` is set. There is no login.

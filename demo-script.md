@@ -22,25 +22,28 @@ Click **Next**.
 
 Click **Find partners**.
 
-**0:30–0:48 · The path and the reasons**
-*On screen:* scroll slowly from the technologist step to the testing lab step. Hover the chips on **Mysore Dairy Research Lab (82)**.
-> "It lays out the path: a technologist for the recipe, a lab for shelf life, then pilot, packaging and factory. Every score breaks into reasons. This lab has done chilled dairy before, can test dairy microbiology, is nearby and has capacity. The chips add up to the score, so anyone can check it."
+**0:30–0:40 · The path at a glance**
+*On screen:* the summary table. Run the cursor down the five rows.
+> "One table shows the whole path: a technologist for the recipe, a lab for shelf life, then pilot, packaging and factory. Each row has the best partner, their score, and whether the network covers that step."
 
-Optional: open **How the score works** for one second.
+**0:40–0:52 · The reasons**
+*On screen:* click the **Testing lab** row. In the side panel, click **Why 82?** on Mysore Dairy Research Lab.
+> "Every score breaks down into reasons that add up to the total. This lab has done chilled dairy before, can test dairy microbiology, is nearby and has capacity, so anyone can check the ranking."
 
-**0:48–1:00 · The gap**
-*On screen:* scroll up to the amber **Gaps in the network** box. Point at the contract manufacturer line.
+Optional: open **How the score works** at the top of the table for one second.
+
+**0:52–1:02 · The gap**
+*On screen:* click the **Contract manufacturer** row. Point at the amber box.
 > "And it's honest about what's missing. No manufacturer in the network does chilled dairy at 300 kg. The smallest minimum is 1,000 kg."
 
-**1:00–1:10 · Logging an outcome**
-*On screen:* on Mysore Dairy Research Lab, click **Pick**. Choose **Project went ahead**, type `Shelf-life study done in 3 weeks`, and click **Log outcome**. The green ▲ appears on the score.
+**1:02–1:12 · Logging an outcome**
+*On screen:* click **Testing lab** again. On Mysore Dairy Research Lab, click **Pick**, choose **Project went ahead**, type `Shelf-life study done in 3 weeks`, and click **Log outcome**. The green ▲ appears under the score, and the table updates too.
 > "When an intro works out, or doesn't, the team logs it, and the ranking learns from it straight away."
 
-**1:10–1:20 · Network gaps**
-*On screen:* click **Network gaps** in the header.
-*On screen:* point at the **Contract manufacturer · Chilled dairy** row.
+**1:12–1:20 · Network gaps**
+*On screen:* click **Network gaps** in the header, then point at the **Contract manufacturer · Chilled dairy** row.
 > "Across every brief, the gaps roll up into a recruiting list. This is who First Batch should sign next: a chilled dairy manufacturer near Bangalore that takes small batches."
 
 ---
 
-**Before recording:** restart the app, or use a clean database, so earlier test clicks don't show up as logged outcomes.
+**Before recording:** outcomes are now saved in the database, so test clicks stay. Use a brief you haven't logged against, or clear the `outcomes` and `briefs` tables in Neon first.

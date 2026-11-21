@@ -3,7 +3,8 @@ import { match } from "./match";
 import { getStore, type LoggedOutcome } from "./store";
 import type { Brief, Outcome, Partner } from "./types";
 
-export const PARTNERS = data.partners as Partner[];
+// The step already says "Food technologist", so drop the repeated label from names.
+export const PARTNERS = (data.partners as Partner[]).map((p) => ({ ...p, name: p.name.replace(/ \(food technologist\)$/, "") }));
 
 export function toOutcomeMap(rows: LoggedOutcome[]): Record<string, Outcome[]> {
   const map: Record<string, Outcome[]> = {};
