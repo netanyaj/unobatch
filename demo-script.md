@@ -17,7 +17,7 @@ Click **Next**.
 > "A brand fills in a short brief: chilled dairy, 300 kg first batch, Bangalore, and where they're stuck in their own words."
 
 **0:22–0:30 · What we understood**
-*On screen:* the three tags: shelf life, kitchen to factory, food safety. Click **Find partners**.
+*On screen:* the three tags: shelf life, kitchen to factory, food safety. Click **Match and add to pipeline**.
 > "AI turns that note into tags from a fixed list. It never picks partners. The team can fix the tags first."
 
 **0:30–0:42 · The path and the reasons**

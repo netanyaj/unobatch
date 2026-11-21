@@ -68,7 +68,7 @@ export default function PartnerCard({ s, rank, delta, status, onDetails, onPick,
               {best ? <Badge className="bg-emerald-600 text-white">Best match</Badge> : <span>Option {rank}</span>}
               <span>{p.city}</span>
             </div>
-            <button onClick={onDetails} className="mt-1 text-left font-medium leading-snug hover:underline">{p.name}</button>
+            <div className="mt-1 font-medium leading-snug">{p.name}</div>
           </div>
           <div className="shrink-0 text-right">
             <div className="text-2xl font-semibold leading-none tabular-nums">{s.score}</div>
@@ -87,7 +87,7 @@ export default function PartnerCard({ s, rank, delta, status, onDetails, onPick,
           {top.map((r, i) => <li key={i} className="flex items-center gap-2"><Check className="size-4 text-emerald-600" />{r.label}</li>)}
           {weak && <li className="flex items-center gap-2 text-rose-700"><X className="size-4" />{weak.label}</li>}
         </ul>
-        {s.warnings.map((w, i) => (
+        {s.warnings.filter((w) => !(weak?.label === "Fully booked" && w.startsWith("Fully booked"))).map((w, i) => (
           <div key={i} className="mt-2 flex items-center gap-1.5 text-xs text-amber-800"><TriangleAlert className="size-3.5" />{w}</div>
         ))}
 

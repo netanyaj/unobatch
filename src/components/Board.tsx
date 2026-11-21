@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Sheet, SheetContent, SheetDescription, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { Plus, TriangleAlert } from "lucide-react";
+import { TriangleAlert } from "lucide-react";
 import BriefPanel from "./BriefPanel";
 
 const DOT: Record<string, string> = {
@@ -88,12 +88,9 @@ export default function Board() {
           </p>
           {storage === "memory" && <p className="mt-1 text-xs text-muted-foreground">No database connected, so the board empties when the server restarts.</p>}
         </div>
-        <div className="flex gap-2">
-          {briefs.length < 6 && (
-            <Button variant="outline" onClick={seed} disabled={seeding}>{seeding ? "Adding…" : "Add example briefs"}</Button>
-          )}
-          <Button asChild><Link href="/new"><Plus />New brief</Link></Button>
-        </div>
+        {briefs.length < 6 && (
+          <Button variant="outline" onClick={seed} disabled={seeding}>{seeding ? "Adding…" : "Add example briefs"}</Button>
+        )}
       </div>
 
       <div className="grid grid-cols-5 gap-3">

@@ -4,7 +4,6 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { CATEGORIES, CITIES, STORAGE, TYPE_LABEL } from "@/lib/constants";
-import { STAGE_LABEL } from "@/lib/pipeline";
 import type { RecruitNeed } from "@/lib/recruiting";
 import type { Partner, PartnerType, Storage, Workload } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
@@ -158,7 +157,6 @@ export default function RecruitingView() {
                           {b.blocked
                             ? <Badge variant="outline" className="border-amber-300 bg-amber-50 text-amber-800"><TriangleAlert />No fit</Badge>
                             : <Badge variant="outline" className="text-muted-foreground">Weak fit</Badge>}
-                          <span className="text-xs text-muted-foreground">{STAGE_LABEL[b.stage]}</span>
                         </li>
                       ))}
                     </ul>

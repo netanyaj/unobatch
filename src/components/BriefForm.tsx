@@ -1,6 +1,7 @@
 "use client";
 
 import { CATEGORIES, CITIES, CLAIMS, STAGES, STORAGE } from "@/lib/constants";
+import Link from "next/link";
 import { TEST_BRIEFS } from "@/lib/testBriefs";
 import type { Brief } from "@/lib/types";
 import { Button } from "@/components/ui/button";
@@ -51,7 +52,7 @@ export default function BriefForm({ brief, setBrief, onSubmit, busy }: {
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl tracking-tight">New brief</CardTitle>
-          <CardDescription>Tell us about the product. We&apos;ll suggest who to work with, in what order, and why.</CardDescription>
+          <CardDescription>Enter the brand&apos;s brief. It goes on the pipeline with the partners it needs, in order.</CardDescription>
           <CardAction>
             <Select value="" onValueChange={(v) => {
               const b = TEST_BRIEFS[Number(v)];
@@ -80,7 +81,7 @@ export default function BriefForm({ brief, setBrief, onSubmit, busy }: {
           </div>
 
           <div className="col-span-2 grid gap-2">
-            <Label>Where are you now?</Label>
+            <Label>Brand&apos;s stage</Label>
             <Choice value={brief.stage} options={STAGES} onChange={(v) => set("stage", v)} />
           </div>
 
@@ -114,22 +115,23 @@ export default function BriefForm({ brief, setBrief, onSubmit, busy }: {
               onChange={(e) => set("batchKg", Number(e.target.value))} />
           </div>
           <div className="grid gap-2">
-            <Label>Your city</Label>
+            <Label>Brand&apos;s city</Label>
             <Select value={brief.city} onValueChange={(v) => set("city", v)}>
-              <SelectTrigger className="w-full" aria-label="Your city"><SelectValue /></SelectTrigger>
+              <SelectTrigger className="w-full" aria-label="Brand's city"><SelectValue /></SelectTrigger>
               <SelectContent>{CITIES.map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}</SelectContent>
             </Select>
           </div>
 
           <div className="col-span-2 grid gap-2">
-            <Label htmlFor="stuck">Where are you stuck?</Label>
+            <Label htmlFor="stuck">Where is the brand stuck?</Label>
             <Textarea id="stuck" rows={3} value={brief.stuck}
-              placeholder="In your own words. e.g. My bar goes hard after 2 weeks."
+              placeholder="In the founder's words. e.g. Our bar goes hard after 2 weeks."
               onChange={(e) => set("stuck", e.target.value)} />
           </div>
         </CardContent>
 
-        <CardFooter className="justify-end">
+        <CardFooter className="justify-between">
+          <Button type="button" variant="ghost" asChild><Link href="/">Cancel</Link></Button>
           <Button type="submit" disabled={busy}>{busy ? "Working…" : "Next"}</Button>
         </CardFooter>
       </Card>

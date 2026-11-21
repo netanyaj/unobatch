@@ -60,7 +60,7 @@ export default function IssueReview({ brief, setIssues, source, onBack, onConfir
 
       <CardFooter className="justify-between">
         <Button type="button" variant="ghost" onClick={onBack}><ArrowLeft />Edit brief</Button>
-        <Button type="button" onClick={onConfirm} disabled={busy}>{busy ? "Matching…" : "Find partners"}</Button>
+        <Button type="button" onClick={onConfirm} disabled={busy}>{busy ? "Matching…" : "Match and add to pipeline"}</Button>
       </CardFooter>
     </Card>
   );
