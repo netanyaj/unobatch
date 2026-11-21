@@ -1,6 +1,6 @@
 # Uno Batch (First Batch prototype)
 
-A small prototype built for a job application to First Batch Co. A brand fills in a short brief. The tool lays out the partners the project needs, in order, and ranks partners from the network for each step. It shows why each partner matched and where the network has gaps.
+A prototype of a partner-matching tool for First Batch Co. A brand fills in a short brief. The tool lays out the partners the project needs, in order, and ranks partners from the network for each step. It shows why each partner matched and where the network has gaps.
 
 The point: matching should be explainable and checkable, not a black box. The gaps tell the team which partners to recruit next.
 
