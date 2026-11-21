@@ -19,7 +19,7 @@ export default function NavBar() {
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-6 px-6">
         <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
           <span className="grid size-7 place-items-center rounded-md bg-primary text-sm font-bold text-primary-foreground">U</span>
-          Uno match
+          Uno Batch
         </Link>
         <nav className="flex h-full items-center gap-1">
           {LINKS.map(({ href, label, icon: Icon }) => {

@@ -6,7 +6,7 @@ import NavBar from "@/components/NavBar";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Uno match",
+  title: "Uno Batch",
   description: "Track every brand brief from first match to done, with ranked partners, reasons and the gaps to recruit for.",
 };
 
