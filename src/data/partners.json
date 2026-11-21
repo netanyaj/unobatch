@@ -1,0 +1,2120 @@
+{
+  "note": "Sample data, not First Batch's real network. All names are made up.",
+  "partners": [
+    {
+      "id": "T01",
+      "name": "Anika Rao (food technologist)",
+      "type": "technologist",
+      "categories": [
+        "protein-snacks",
+        "high-fibre-bars",
+        "bakery"
+      ],
+      "capabilities": [
+        "bar reformulation",
+        "texture fixes",
+        "protein fortification",
+        "shelf-life planning"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [],
+      "city": "Bangalore",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-03",
+          "category": "high-fibre-bars",
+          "result": "went_ahead",
+          "note": "Fixed bar hardening with a glycerine and fibre blend"
+        },
+        {
+          "date": "2026-07",
+          "category": "protein-snacks",
+          "result": "went_ahead",
+          "note": "Protein crisps reformulated in 3 weeks"
+        }
+      ]
+    },
+    {
+      "id": "T02",
+      "name": "Vikram Shetty (food technologist)",
+      "type": "technologist",
+      "categories": [
+        "chilled-dairy",
+        "fresh-cheese",
+        "sugar-free-desserts"
+      ],
+      "capabilities": [
+        "dairy process design",
+        "culture selection",
+        "sugar reduction",
+        "shelf-life planning"
+      ],
+      "storage": [
+        "chilled",
+        "frozen"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [],
+      "city": "Bangalore",
+      "workload": "full",
+      "pastOutcomes": [
+        {
+          "date": "2026-05",
+          "category": "chilled-dairy",
+          "result": "went_ahead",
+          "note": "Set up a high-protein curd recipe for pilot"
+        },
+        {
+          "date": "2026-09",
+          "category": "fresh-cheese",
+          "result": "declined",
+          "note": "No time this quarter"
+        }
+      ]
+    },
+    {
+      "id": "T03",
+      "name": "Leena Joseph (food technologist)",
+      "type": "technologist",
+      "categories": [
+        "functional-beverages",
+        "functional-coffee"
+      ],
+      "capabilities": [
+        "beverage formulation",
+        "botanical extracts",
+        "caffeine dosing",
+        "label claims"
+      ],
+      "storage": [
+        "ambient",
+        "chilled"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [],
+      "city": "Kochi",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-06",
+          "category": "functional-beverages",
+          "result": "went_ahead",
+          "note": "Ashwagandha drink moved to pilot"
+        }
+      ]
+    },
+    {
+      "id": "T04",
+      "name": "Rohan Mehta (food technologist)",
+      "type": "technologist",
+      "categories": [
+        "bakery",
+        "rte-breakfast"
+      ],
+      "capabilities": [
+        "baking process",
+        "clean-label emulsifiers",
+        "texture fixes",
+        "scale-up planning"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [],
+      "city": "Mumbai",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-02",
+          "category": "bakery",
+          "result": "went_ahead",
+          "note": "Millet cookie scaled from kitchen to pilot"
+        },
+        {
+          "date": "2026-08",
+          "category": "rte-breakfast",
+          "result": "didnt_work",
+          "note": "Brand changed direction after first trial"
+        }
+      ]
+    },
+    {
+      "id": "T05",
+      "name": "Priya Natarajan (food technologist)",
+      "type": "technologist",
+      "categories": [
+        "sugar-free-desserts",
+        "filled-chocolates"
+      ],
+      "capabilities": [
+        "sugar reduction",
+        "sweetener blends",
+        "chocolate tempering",
+        "fat bloom fixes"
+      ],
+      "storage": [
+        "ambient",
+        "chilled",
+        "frozen"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [],
+      "city": "Chennai",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-04",
+          "category": "filled-chocolates",
+          "result": "went_ahead",
+          "note": "Stopped fat bloom in a filled bar"
+        },
+        {
+          "date": "2026-10",
+          "category": "sugar-free-desserts",
+          "result": "accepted",
+          "note": "Working on a sugar-free kulfi"
+        }
+      ]
+    },
+    {
+      "id": "T06",
+      "name": "Arjun Desai (food technologist)",
+      "type": "technologist",
+      "categories": [
+        "protein-snacks",
+        "functional-beverages"
+      ],
+      "capabilities": [
+        "protein fortification",
+        "plant protein taste masking",
+        "extrusion"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [],
+      "city": "Pune",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-06",
+          "category": "protein-snacks",
+          "result": "didnt_work",
+          "note": "Taste masking didn't reach the brand's target"
+        }
+      ]
+    },
+    {
+      "id": "T07",
+      "name": "Sneha Kulkarni (food technologist)",
+      "type": "technologist",
+      "categories": [
+        "clean-label-purees",
+        "rte-breakfast"
+      ],
+      "capabilities": [
+        "retort process",
+        "clean-label preservation",
+        "infant-safe recipes",
+        "shelf-life planning"
+      ],
+      "storage": [
+        "ambient",
+        "chilled"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [],
+      "city": "Pune",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-05",
+          "category": "clean-label-purees",
+          "result": "went_ahead",
+          "note": "Fruit purée made shelf-stable without preservatives"
+        }
+      ]
+    },
+    {
+      "id": "T08",
+      "name": "Farhan Qureshi (food technologist)",
+      "type": "technologist",
+      "categories": [
+        "high-fibre-bars",
+        "rte-breakfast",
+        "bakery"
+      ],
+      "capabilities": [
+        "bar reformulation",
+        "fibre fortification",
+        "nutrition labelling"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [],
+      "city": "Hyderabad",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-01",
+          "category": "high-fibre-bars",
+          "result": "went_ahead",
+          "note": "Raised fibre to 10 g per bar"
+        },
+        {
+          "date": "2026-09",
+          "category": "high-fibre-bars",
+          "result": "accepted",
+          "note": "Intro accepted for an oats bar"
+        }
+      ]
+    },
+    {
+      "id": "T09",
+      "name": "Kavya Iyer (food technologist)",
+      "type": "technologist",
+      "categories": [
+        "functional-coffee",
+        "functional-beverages"
+      ],
+      "capabilities": [
+        "coffee blending",
+        "cold brew process",
+        "adaptogen dosing",
+        "sensory testing"
+      ],
+      "storage": [
+        "ambient",
+        "chilled"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [],
+      "city": "Bangalore",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-07",
+          "category": "functional-coffee",
+          "result": "went_ahead",
+          "note": "Mushroom coffee blend finalised"
+        }
+      ]
+    },
+    {
+      "id": "T10",
+      "name": "Deepak Menon (food technologist)",
+      "type": "technologist",
+      "categories": [
+        "fresh-cheese",
+        "chilled-dairy"
+      ],
+      "capabilities": [
+        "cheese making",
+        "culture selection",
+        "small-batch dairy"
+      ],
+      "storage": [
+        "chilled"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [],
+      "city": "Kochi",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-04",
+          "category": "fresh-cheese",
+          "result": "went_ahead",
+          "note": "Paneer yield improved by 8%"
+        },
+        {
+          "date": "2026-10",
+          "category": "chilled-dairy",
+          "result": "declined",
+          "note": "Brand was in Delhi and wanted in-person trials"
+        }
+      ]
+    },
+    {
+      "id": "T11",
+      "name": "Neha Bansal (food technologist)",
+      "type": "technologist",
+      "categories": [
+        "bakery",
+        "sugar-free-desserts",
+        "filled-chocolates"
+      ],
+      "capabilities": [
+        "eggless baking",
+        "sugar reduction",
+        "regulatory review"
+      ],
+      "storage": [
+        "ambient",
+        "chilled"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [],
+      "city": "Delhi NCR",
+      "workload": "full",
+      "pastOutcomes": [
+        {
+          "date": "2026-08",
+          "category": "bakery",
+          "result": "went_ahead",
+          "note": "Eggless brownie recipe locked"
+        }
+      ]
+    },
+    {
+      "id": "T12",
+      "name": "Siddharth Pillai (food technologist)",
+      "type": "technologist",
+      "categories": [
+        "rte-breakfast",
+        "protein-snacks",
+        "clean-label-purees"
+      ],
+      "capabilities": [
+        "extrusion",
+        "ready-to-eat formats",
+        "retort process",
+        "scale-up planning"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [],
+      "city": "Chennai",
+      "workload": "medium",
+      "pastOutcomes": []
+    },
+    {
+      "id": "L01",
+      "name": "Sampoorna Testing Labs",
+      "type": "lab",
+      "categories": [
+        "protein-snacks",
+        "high-fibre-bars",
+        "bakery",
+        "rte-breakfast",
+        "filled-chocolates"
+      ],
+      "capabilities": [
+        "shelf-life study",
+        "nutrition analysis",
+        "microbial testing",
+        "texture analysis"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [
+        "NABL-accredited",
+        "FSSAI-notified"
+      ],
+      "city": "Bangalore",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-03",
+          "category": "high-fibre-bars",
+          "result": "went_ahead",
+          "note": "Accelerated shelf-life study, 6 weeks"
+        },
+        {
+          "date": "2026-08",
+          "category": "protein-snacks",
+          "result": "went_ahead",
+          "note": "Protein claim verified"
+        }
+      ]
+    },
+    {
+      "id": "L02",
+      "name": "Kaveri Analytical",
+      "type": "lab",
+      "categories": [
+        "chilled-dairy",
+        "fresh-cheese",
+        "sugar-free-desserts",
+        "functional-beverages"
+      ],
+      "capabilities": [
+        "microbial testing",
+        "shelf-life study",
+        "challenge testing",
+        "nutrition analysis"
+      ],
+      "storage": [
+        "ambient",
+        "chilled",
+        "frozen"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [
+        "NABL-accredited",
+        "FSSAI-notified"
+      ],
+      "city": "Bangalore",
+      "workload": "full",
+      "pastOutcomes": [
+        {
+          "date": "2026-06",
+          "category": "chilled-dairy",
+          "result": "went_ahead",
+          "note": "Chilled shelf-life study for yoghurt"
+        },
+        {
+          "date": "2026-10",
+          "category": "fresh-cheese",
+          "result": "declined",
+          "note": "Queue was 5 weeks long"
+        }
+      ]
+    },
+    {
+      "id": "L03",
+      "name": "Western Food Sciences Lab",
+      "type": "lab",
+      "categories": [
+        "functional-beverages",
+        "functional-coffee",
+        "clean-label-purees",
+        "rte-breakfast"
+      ],
+      "capabilities": [
+        "nutrition analysis",
+        "caffeine testing",
+        "heavy metals",
+        "shelf-life study"
+      ],
+      "storage": [
+        "ambient",
+        "chilled"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [
+        "NABL-accredited"
+      ],
+      "city": "Mumbai",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-05",
+          "category": "functional-coffee",
+          "result": "went_ahead",
+          "note": "Caffeine level confirmed for label"
+        }
+      ]
+    },
+    {
+      "id": "L04",
+      "name": "Deccan Quality Labs",
+      "type": "lab",
+      "categories": [
+        "protein-snacks",
+        "high-fibre-bars",
+        "bakery",
+        "rte-breakfast",
+        "sugar-free-desserts"
+      ],
+      "capabilities": [
+        "nutrition analysis",
+        "allergen testing",
+        "microbial testing"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [
+        "NABL-accredited",
+        "FSSAI-notified"
+      ],
+      "city": "Hyderabad",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-02",
+          "category": "bakery",
+          "result": "went_ahead",
+          "note": "Gluten-free claim tested"
+        }
+      ]
+    },
+    {
+      "id": "L05",
+      "name": "Coastal Micro Labs",
+      "type": "lab",
+      "categories": [
+        "fresh-cheese",
+        "chilled-dairy",
+        "clean-label-purees"
+      ],
+      "capabilities": [
+        "microbial testing",
+        "challenge testing"
+      ],
+      "storage": [
+        "chilled",
+        "frozen"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [
+        "FSSAI-notified"
+      ],
+      "city": "Chennai",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-07",
+          "category": "clean-label-purees",
+          "result": "didnt_work",
+          "note": "Report format was rejected by retailer"
+        }
+      ]
+    },
+    {
+      "id": "L06",
+      "name": "North Star Food Testing",
+      "type": "lab",
+      "categories": [
+        "sugar-free-desserts",
+        "filled-chocolates",
+        "bakery",
+        "functional-beverages"
+      ],
+      "capabilities": [
+        "nutrition analysis",
+        "sugar profiling",
+        "shelf-life study",
+        "sensory panel"
+      ],
+      "storage": [
+        "ambient",
+        "chilled",
+        "frozen"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [
+        "NABL-accredited",
+        "FSSAI-notified"
+      ],
+      "city": "Delhi NCR",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-04",
+          "category": "sugar-free-desserts",
+          "result": "went_ahead",
+          "note": "Sugar-free claim verified"
+        },
+        {
+          "date": "2026-09",
+          "category": "filled-chocolates",
+          "result": "went_ahead",
+          "note": "Shelf-life at 25 °C confirmed"
+        }
+      ]
+    },
+    {
+      "id": "L07",
+      "name": "Sahyadri Sensory & Shelf Life",
+      "type": "lab",
+      "categories": [
+        "protein-snacks",
+        "high-fibre-bars",
+        "functional-coffee",
+        "functional-beverages",
+        "rte-breakfast"
+      ],
+      "capabilities": [
+        "sensory panel",
+        "shelf-life study",
+        "texture analysis"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [
+        "FSSAI-notified"
+      ],
+      "city": "Pune",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-06",
+          "category": "high-fibre-bars",
+          "result": "accepted",
+          "note": "Intro accepted for a sensory test"
+        }
+      ]
+    },
+    {
+      "id": "L08",
+      "name": "Malabar Bio Testing",
+      "type": "lab",
+      "categories": [
+        "clean-label-purees",
+        "functional-beverages",
+        "functional-coffee"
+      ],
+      "capabilities": [
+        "microbial testing",
+        "pesticide residue",
+        "nutrition analysis"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [
+        "NABL-accredited"
+      ],
+      "city": "Kochi",
+      "workload": "low",
+      "pastOutcomes": []
+    },
+    {
+      "id": "L09",
+      "name": "Mysore Dairy Research Lab",
+      "type": "lab",
+      "categories": [
+        "chilled-dairy",
+        "fresh-cheese"
+      ],
+      "capabilities": [
+        "dairy microbiology",
+        "shelf-life study",
+        "fat and protein analysis"
+      ],
+      "storage": [
+        "chilled"
+      ],
+      "minBatchKg": null,
+      "maxBatchKg": null,
+      "certifications": [
+        "NABL-accredited",
+        "FSSAI-notified"
+      ],
+      "city": "Mysuru",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-08",
+          "category": "chilled-dairy",
+          "result": "went_ahead",
+          "note": "Probiotic count verified for label"
+        }
+      ]
+    },
+    {
+      "id": "I01",
+      "name": "Prana Proteins",
+      "type": "ingredient-supplier",
+      "categories": [
+        "protein-snacks",
+        "high-fibre-bars",
+        "functional-beverages"
+      ],
+      "capabilities": [
+        "whey protein",
+        "pea protein",
+        "protein crisps"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 50,
+      "maxBatchKg": 20000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Bangalore",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-03",
+          "category": "protein-snacks",
+          "result": "went_ahead",
+          "note": "Supplied pea protein crisps"
+        },
+        {
+          "date": "2026-07",
+          "category": "high-fibre-bars",
+          "result": "went_ahead",
+          "note": "Supplied whey for a bar"
+        }
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "Fibrewell Ingredients",
+      "type": "ingredient-supplier",
+      "categories": [
+        "high-fibre-bars",
+        "bakery",
+        "rte-breakfast"
+      ],
+      "capabilities": [
+        "inulin",
+        "oat fibre",
+        "resistant dextrin"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 100,
+      "maxBatchKg": 50000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Ahmedabad",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-02",
+          "category": "high-fibre-bars",
+          "result": "went_ahead",
+          "note": "Inulin for a fibre bar"
+        }
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "Sweetleaf Naturals",
+      "type": "ingredient-supplier",
+      "categories": [
+        "sugar-free-desserts",
+        "filled-chocolates",
+        "functional-beverages",
+        "functional-coffee"
+      ],
+      "capabilities": [
+        "stevia",
+        "monk fruit",
+        "erythritol",
+        "sweetener blends"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 25,
+      "maxBatchKg": 10000,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Pune",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-04",
+          "category": "sugar-free-desserts",
+          "result": "went_ahead",
+          "note": "Sweetener blend for sugar-free mousse"
+        },
+        {
+          "date": "2026-09",
+          "category": "filled-chocolates",
+          "result": "didnt_work",
+          "note": "Aftertaste the brand didn't like"
+        }
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "Cocoa Coast Trading",
+      "type": "ingredient-supplier",
+      "categories": [
+        "filled-chocolates",
+        "bakery"
+      ],
+      "capabilities": [
+        "couverture chocolate",
+        "compound chocolate",
+        "sugar-free chocolate",
+        "fillings"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 100,
+      "maxBatchKg": 30000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Kochi",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-05",
+          "category": "filled-chocolates",
+          "result": "went_ahead",
+          "note": "Sugar-free couverture supplied"
+        }
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "Milkway Cultures",
+      "type": "ingredient-supplier",
+      "categories": [
+        "chilled-dairy",
+        "fresh-cheese"
+      ],
+      "capabilities": [
+        "dairy cultures",
+        "probiotic cultures",
+        "rennet"
+      ],
+      "storage": [
+        "chilled",
+        "frozen"
+      ],
+      "minBatchKg": 10,
+      "maxBatchKg": 5000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Bangalore",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-06",
+          "category": "chilled-dairy",
+          "result": "went_ahead",
+          "note": "Cultures for high-protein curd"
+        }
+      ]
+    },
+    {
+      "id": "I06",
+      "name": "Orchard Pulp Co.",
+      "type": "ingredient-supplier",
+      "categories": [
+        "clean-label-purees",
+        "functional-beverages",
+        "sugar-free-desserts"
+      ],
+      "capabilities": [
+        "fruit pulps",
+        "vegetable purées",
+        "aseptic packs"
+      ],
+      "storage": [
+        "ambient",
+        "frozen"
+      ],
+      "minBatchKg": 200,
+      "maxBatchKg": 40000,
+      "certifications": [
+        "FSSAI licence",
+        "BRC"
+      ],
+      "city": "Chennai",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-05",
+          "category": "clean-label-purees",
+          "result": "went_ahead",
+          "note": "Mango pulp for a baby purée"
+        }
+      ]
+    },
+    {
+      "id": "I07",
+      "name": "Grainsmith Millets",
+      "type": "ingredient-supplier",
+      "categories": [
+        "bakery",
+        "rte-breakfast",
+        "high-fibre-bars",
+        "protein-snacks"
+      ],
+      "capabilities": [
+        "millet flours",
+        "puffed grains",
+        "rolled oats"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 50,
+      "maxBatchKg": 25000,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Hyderabad",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-01",
+          "category": "rte-breakfast",
+          "result": "went_ahead",
+          "note": "Puffed millets for a breakfast cup"
+        }
+      ]
+    },
+    {
+      "id": "I08",
+      "name": "Bean & Bloom Coffee Traders",
+      "type": "ingredient-supplier",
+      "categories": [
+        "functional-coffee"
+      ],
+      "capabilities": [
+        "green coffee",
+        "roasted coffee",
+        "instant coffee base"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 50,
+      "maxBatchKg": 10000,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Bangalore",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-07",
+          "category": "functional-coffee",
+          "result": "went_ahead",
+          "note": "Roasted arabica for a functional blend"
+        }
+      ]
+    },
+    {
+      "id": "I09",
+      "name": "Herbal Roots Extracts",
+      "type": "ingredient-supplier",
+      "categories": [
+        "functional-beverages",
+        "functional-coffee",
+        "protein-snacks"
+      ],
+      "capabilities": [
+        "ashwagandha extract",
+        "mushroom extracts",
+        "electrolyte premix"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 5,
+      "maxBatchKg": 2000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Mysuru",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-06",
+          "category": "functional-beverages",
+          "result": "went_ahead",
+          "note": "Ashwagandha extract supplied"
+        },
+        {
+          "date": "2026-10",
+          "category": "functional-coffee",
+          "result": "accepted",
+          "note": "Lion's mane extract samples sent"
+        }
+      ]
+    },
+    {
+      "id": "I10",
+      "name": "Clean Label Additives",
+      "type": "ingredient-supplier",
+      "categories": [
+        "bakery",
+        "rte-breakfast",
+        "clean-label-purees",
+        "sugar-free-desserts"
+      ],
+      "capabilities": [
+        "natural emulsifiers",
+        "citrus fibre",
+        "natural preservatives"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 25,
+      "maxBatchKg": 8000,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Mumbai",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-08",
+          "category": "bakery",
+          "result": "declined",
+          "note": "Couldn't meet the 25 kg trial order"
+        }
+      ]
+    },
+    {
+      "id": "I11",
+      "name": "Nutsy Bulk Foods",
+      "type": "ingredient-supplier",
+      "categories": [
+        "protein-snacks",
+        "high-fibre-bars",
+        "filled-chocolates"
+      ],
+      "capabilities": [
+        "nut butters",
+        "roasted nuts",
+        "date paste"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 50,
+      "maxBatchKg": 15000,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Delhi NCR",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-03",
+          "category": "high-fibre-bars",
+          "result": "went_ahead",
+          "note": "Date paste for a bar binder"
+        }
+      ]
+    },
+    {
+      "id": "P01",
+      "name": "Bengaluru Food Incubation Centre",
+      "type": "pilot-facility",
+      "categories": [
+        "protein-snacks",
+        "high-fibre-bars",
+        "bakery",
+        "rte-breakfast"
+      ],
+      "capabilities": [
+        "bar forming",
+        "baking",
+        "extrusion",
+        "flow wrap"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 20,
+      "maxBatchKg": 300,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Bangalore",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-03",
+          "category": "high-fibre-bars",
+          "result": "went_ahead",
+          "note": "200 kg bar pilot run"
+        },
+        {
+          "date": "2026-08",
+          "category": "protein-snacks",
+          "result": "went_ahead",
+          "note": "Protein crisp pilot"
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "name": "Agri Pilot Plant, Mysuru",
+      "type": "pilot-facility",
+      "categories": [
+        "chilled-dairy",
+        "fresh-cheese",
+        "clean-label-purees"
+      ],
+      "capabilities": [
+        "pasteurisation",
+        "curd setting",
+        "cheese vats",
+        "pulping"
+      ],
+      "storage": [
+        "chilled",
+        "ambient"
+      ],
+      "minBatchKg": 50,
+      "maxBatchKg": 500,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Mysuru",
+      "workload": "full",
+      "pastOutcomes": [
+        {
+          "date": "2026-06",
+          "category": "chilled-dairy",
+          "result": "went_ahead",
+          "note": "Curd pilot, 300 L"
+        },
+        {
+          "date": "2026-10",
+          "category": "fresh-cheese",
+          "result": "declined",
+          "note": "Booked until January"
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "name": "Pune Beverage Pilot Lab",
+      "type": "pilot-facility",
+      "categories": [
+        "functional-beverages",
+        "functional-coffee"
+      ],
+      "capabilities": [
+        "hot fill",
+        "cold brew",
+        "carbonation",
+        "can seaming"
+      ],
+      "storage": [
+        "ambient",
+        "chilled"
+      ],
+      "minBatchKg": 50,
+      "maxBatchKg": 1000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Pune",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-05",
+          "category": "functional-beverages",
+          "result": "went_ahead",
+          "note": "500 L pilot of a functional drink"
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "name": "Hyderabad Bakery Pilot Kitchen",
+      "type": "pilot-facility",
+      "categories": [
+        "bakery",
+        "sugar-free-desserts",
+        "filled-chocolates"
+      ],
+      "capabilities": [
+        "baking",
+        "enrobing",
+        "tempering",
+        "depositing"
+      ],
+      "storage": [
+        "ambient",
+        "chilled"
+      ],
+      "minBatchKg": 10,
+      "maxBatchKg": 200,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Hyderabad",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-04",
+          "category": "filled-chocolates",
+          "result": "went_ahead",
+          "note": "Filled chocolate pilot, 80 kg"
+        }
+      ]
+    },
+    {
+      "id": "P05",
+      "name": "Chennai Retort Pilot Unit",
+      "type": "pilot-facility",
+      "categories": [
+        "rte-breakfast",
+        "clean-label-purees"
+      ],
+      "capabilities": [
+        "retort pouch",
+        "aseptic filling",
+        "pulping"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 50,
+      "maxBatchKg": 600,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Chennai",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-05",
+          "category": "clean-label-purees",
+          "result": "went_ahead",
+          "note": "Retort purée pilot"
+        },
+        {
+          "date": "2026-09",
+          "category": "rte-breakfast",
+          "result": "didnt_work",
+          "note": "Upma texture broke down in retort"
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "name": "Mumbai Cold Kitchen Pilot",
+      "type": "pilot-facility",
+      "categories": [
+        "sugar-free-desserts",
+        "chilled-dairy"
+      ],
+      "capabilities": [
+        "frozen dessert mixing",
+        "batch freezing",
+        "cups and tubs"
+      ],
+      "storage": [
+        "chilled",
+        "frozen"
+      ],
+      "minBatchKg": 20,
+      "maxBatchKg": 300,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Mumbai",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-07",
+          "category": "sugar-free-desserts",
+          "result": "went_ahead",
+          "note": "Sugar-free ice cream pilot"
+        }
+      ]
+    },
+    {
+      "id": "P07",
+      "name": "Delhi Snack Pilot Works",
+      "type": "pilot-facility",
+      "categories": [
+        "protein-snacks",
+        "rte-breakfast",
+        "high-fibre-bars"
+      ],
+      "capabilities": [
+        "extrusion",
+        "roasting",
+        "seasoning",
+        "pouch filling"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 30,
+      "maxBatchKg": 400,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Delhi NCR",
+      "workload": "low",
+      "pastOutcomes": []
+    },
+    {
+      "id": "M01",
+      "name": "Southern Bars & Bites",
+      "type": "manufacturer",
+      "categories": [
+        "protein-snacks",
+        "high-fibre-bars"
+      ],
+      "capabilities": [
+        "bar forming",
+        "enrobing",
+        "flow wrap"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 500,
+      "maxBatchKg": 20000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Bangalore",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-04",
+          "category": "high-fibre-bars",
+          "result": "went_ahead",
+          "note": "First batch of 1,000 kg"
+        },
+        {
+          "date": "2026-09",
+          "category": "protein-snacks",
+          "result": "went_ahead",
+          "note": "Repeat order"
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "Nilgiri Snack Foods",
+      "type": "manufacturer",
+      "categories": [
+        "protein-snacks",
+        "rte-breakfast"
+      ],
+      "capabilities": [
+        "extrusion",
+        "roasting",
+        "pouch filling"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 1000,
+      "maxBatchKg": 50000,
+      "certifications": [
+        "FSSAI licence",
+        "BRC"
+      ],
+      "city": "Coimbatore",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-06",
+          "category": "protein-snacks",
+          "result": "declined",
+          "note": "Batch too small for their line"
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "name": "Vista Bakes",
+      "type": "manufacturer",
+      "categories": [
+        "bakery",
+        "sugar-free-desserts"
+      ],
+      "capabilities": [
+        "baking",
+        "eggless baking",
+        "flow wrap"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 300,
+      "maxBatchKg": 15000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Bangalore",
+      "workload": "full",
+      "pastOutcomes": [
+        {
+          "date": "2026-03",
+          "category": "bakery",
+          "result": "went_ahead",
+          "note": "Millet cookies, 600 kg"
+        },
+        {
+          "date": "2026-10",
+          "category": "bakery",
+          "result": "declined",
+          "note": "Line fully booked"
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "name": "Konkan Chocolate Works",
+      "type": "manufacturer",
+      "categories": [
+        "filled-chocolates"
+      ],
+      "capabilities": [
+        "tempering",
+        "shell moulding",
+        "filled chocolates",
+        "foil wrap"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 200,
+      "maxBatchKg": 8000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Mumbai",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-05",
+          "category": "filled-chocolates",
+          "result": "went_ahead",
+          "note": "Filled bonbons, 300 kg"
+        },
+        {
+          "date": "2026-09",
+          "category": "filled-chocolates",
+          "result": "didnt_work",
+          "note": "Filling leaked after 3 weeks"
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "name": "Rajhans Dairy Products",
+      "type": "manufacturer",
+      "categories": [
+        "chilled-dairy",
+        "fresh-cheese"
+      ],
+      "capabilities": [
+        "pasteurisation",
+        "curd and yoghurt",
+        "paneer",
+        "cup filling"
+      ],
+      "storage": [
+        "chilled"
+      ],
+      "minBatchKg": 2000,
+      "maxBatchKg": 50000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Delhi NCR",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-07",
+          "category": "chilled-dairy",
+          "result": "declined",
+          "note": "Minimum run is 2,000 L"
+        }
+      ]
+    },
+    {
+      "id": "M06",
+      "name": "Sahyadri Dairy Co-op Unit",
+      "type": "manufacturer",
+      "categories": [
+        "chilled-dairy"
+      ],
+      "capabilities": [
+        "pasteurisation",
+        "flavoured milk",
+        "curd and yoghurt"
+      ],
+      "storage": [
+        "chilled"
+      ],
+      "minBatchKg": 1000,
+      "maxBatchKg": 30000,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Pune",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-08",
+          "category": "chilled-dairy",
+          "result": "went_ahead",
+          "note": "High-protein yoghurt, 1,500 L"
+        }
+      ]
+    },
+    {
+      "id": "M07",
+      "name": "Aurora Beverages",
+      "type": "manufacturer",
+      "categories": [
+        "functional-beverages"
+      ],
+      "capabilities": [
+        "hot fill",
+        "PET bottling",
+        "can filling",
+        "carbonation"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 1000,
+      "maxBatchKg": 100000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000",
+        "BRC"
+      ],
+      "city": "Hyderabad",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-06",
+          "category": "functional-beverages",
+          "result": "went_ahead",
+          "note": "Electrolyte drink, 5,000 L"
+        }
+      ]
+    },
+    {
+      "id": "M08",
+      "name": "Brewline Coffee Packers",
+      "type": "manufacturer",
+      "categories": [
+        "functional-coffee"
+      ],
+      "capabilities": [
+        "instant coffee blending",
+        "sachet packing",
+        "cold brew bottling"
+      ],
+      "storage": [
+        "ambient",
+        "chilled"
+      ],
+      "minBatchKg": 300,
+      "maxBatchKg": 10000,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Bangalore",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-07",
+          "category": "functional-coffee",
+          "result": "went_ahead",
+          "note": "Mushroom coffee sachets, 400 kg"
+        }
+      ]
+    },
+    {
+      "id": "M09",
+      "name": "Tamil Retort Foods",
+      "type": "manufacturer",
+      "categories": [
+        "rte-breakfast",
+        "clean-label-purees"
+      ],
+      "capabilities": [
+        "retort pouch",
+        "ready-to-eat meals",
+        "aseptic filling"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 500,
+      "maxBatchKg": 40000,
+      "certifications": [
+        "FSSAI licence",
+        "BRC",
+        "ISO 22000"
+      ],
+      "city": "Chennai",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-05",
+          "category": "clean-label-purees",
+          "result": "went_ahead",
+          "note": "Baby purée in pouches, 800 kg"
+        },
+        {
+          "date": "2026-09",
+          "category": "rte-breakfast",
+          "result": "went_ahead",
+          "note": "Ready-to-eat poha cups"
+        }
+      ]
+    },
+    {
+      "id": "M10",
+      "name": "Freezewell Desserts",
+      "type": "manufacturer",
+      "categories": [
+        "sugar-free-desserts"
+      ],
+      "capabilities": [
+        "frozen desserts",
+        "ice cream",
+        "cups and sticks"
+      ],
+      "storage": [
+        "frozen"
+      ],
+      "minBatchKg": 500,
+      "maxBatchKg": 20000,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Mumbai",
+      "workload": "full",
+      "pastOutcomes": [
+        {
+          "date": "2026-08",
+          "category": "sugar-free-desserts",
+          "result": "declined",
+          "note": "No freezer space until next year"
+        }
+      ]
+    },
+    {
+      "id": "M11",
+      "name": "Golden Oven Industries",
+      "type": "manufacturer",
+      "categories": [
+        "bakery",
+        "rte-breakfast"
+      ],
+      "capabilities": [
+        "baking",
+        "rusk",
+        "granola",
+        "flow wrap"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 1000,
+      "maxBatchKg": 60000,
+      "certifications": [
+        "FSSAI licence",
+        "BRC"
+      ],
+      "city": "Delhi NCR",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-04",
+          "category": "rte-breakfast",
+          "result": "went_ahead",
+          "note": "Granola, 2,000 kg"
+        }
+      ]
+    },
+    {
+      "id": "M12",
+      "name": "Fresh Fields Purée Co.",
+      "type": "manufacturer",
+      "categories": [
+        "clean-label-purees",
+        "functional-beverages"
+      ],
+      "capabilities": [
+        "pulping",
+        "cold-pressed juice",
+        "HPP"
+      ],
+      "storage": [
+        "chilled",
+        "ambient"
+      ],
+      "minBatchKg": 500,
+      "maxBatchKg": 20000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Bangalore",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-06",
+          "category": "clean-label-purees",
+          "result": "went_ahead",
+          "note": "Cold-pressed fruit purée, 600 kg"
+        }
+      ]
+    },
+    {
+      "id": "M13",
+      "name": "Kerala Spice & Snack Co.",
+      "type": "manufacturer",
+      "categories": [
+        "protein-snacks",
+        "bakery"
+      ],
+      "capabilities": [
+        "roasting",
+        "seasoning",
+        "pouch filling",
+        "baking"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 300,
+      "maxBatchKg": 12000,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Kochi",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-02",
+          "category": "protein-snacks",
+          "result": "didnt_work",
+          "note": "Seasoning coverage was uneven"
+        }
+      ]
+    },
+    {
+      "id": "M14",
+      "name": "Gujarat Nutrition Foods",
+      "type": "manufacturer",
+      "categories": [
+        "high-fibre-bars",
+        "protein-snacks",
+        "rte-breakfast"
+      ],
+      "capabilities": [
+        "bar forming",
+        "extrusion",
+        "powder blending"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 2000,
+      "maxBatchKg": 80000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000",
+        "BRC"
+      ],
+      "city": "Ahmedabad",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-05",
+          "category": "high-fibre-bars",
+          "result": "went_ahead",
+          "note": "Fibre bars, 5,000 kg"
+        }
+      ]
+    },
+    {
+      "id": "M15",
+      "name": "Hosur Chocolate & Confections",
+      "type": "manufacturer",
+      "categories": [
+        "filled-chocolates",
+        "sugar-free-desserts"
+      ],
+      "capabilities": [
+        "enrobing",
+        "filled bars",
+        "sugar-free confectionery"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 500,
+      "maxBatchKg": 15000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Bangalore",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-07",
+          "category": "filled-chocolates",
+          "result": "went_ahead",
+          "note": "Sugar-free filled bars, 700 kg"
+        }
+      ]
+    },
+    {
+      "id": "K01",
+      "name": "FlexiPack Solutions",
+      "type": "packaging",
+      "categories": [
+        "protein-snacks",
+        "high-fibre-bars",
+        "bakery",
+        "rte-breakfast",
+        "functional-coffee"
+      ],
+      "capabilities": [
+        "flow wrap film",
+        "stand-up pouches",
+        "sachets",
+        "low MOQ printing"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 100,
+      "maxBatchKg": 50000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Bangalore",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-04",
+          "category": "high-fibre-bars",
+          "result": "went_ahead",
+          "note": "Printed bar wrappers, low MOQ"
+        }
+      ]
+    },
+    {
+      "id": "K02",
+      "name": "Coldchain Cups & Tubs",
+      "type": "packaging",
+      "categories": [
+        "chilled-dairy",
+        "fresh-cheese",
+        "sugar-free-desserts"
+      ],
+      "capabilities": [
+        "cups",
+        "tubs",
+        "foil lids",
+        "frozen-safe packs"
+      ],
+      "storage": [
+        "chilled",
+        "frozen"
+      ],
+      "minBatchKg": 500,
+      "maxBatchKg": 50000,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Pune",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-07",
+          "category": "chilled-dairy",
+          "result": "went_ahead",
+          "note": "Printed yoghurt cups"
+        }
+      ]
+    },
+    {
+      "id": "K03",
+      "name": "Ecobox Packaging",
+      "type": "packaging",
+      "categories": [
+        "bakery",
+        "filled-chocolates",
+        "rte-breakfast"
+      ],
+      "capabilities": [
+        "paper cartons",
+        "gift boxes",
+        "compostable trays"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 200,
+      "maxBatchKg": 30000,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Mumbai",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-09",
+          "category": "filled-chocolates",
+          "result": "accepted",
+          "note": "Gift box samples requested"
+        }
+      ]
+    },
+    {
+      "id": "K04",
+      "name": "Retortech Pouches",
+      "type": "packaging",
+      "categories": [
+        "rte-breakfast",
+        "clean-label-purees"
+      ],
+      "capabilities": [
+        "retort pouches",
+        "spouted pouches"
+      ],
+      "storage": [
+        "ambient"
+      ],
+      "minBatchKg": 500,
+      "maxBatchKg": 100000,
+      "certifications": [
+        "FSSAI licence",
+        "BRC"
+      ],
+      "city": "Chennai",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-05",
+          "category": "clean-label-purees",
+          "result": "went_ahead",
+          "note": "Spouted purée pouches"
+        }
+      ]
+    },
+    {
+      "id": "K05",
+      "name": "Bottle & Can Supply Co.",
+      "type": "packaging",
+      "categories": [
+        "functional-beverages",
+        "functional-coffee"
+      ],
+      "capabilities": [
+        "PET bottles",
+        "glass bottles",
+        "aluminium cans"
+      ],
+      "storage": [
+        "ambient",
+        "chilled"
+      ],
+      "minBatchKg": 1000,
+      "maxBatchKg": 200000,
+      "certifications": [
+        "FSSAI licence",
+        "ISO 22000"
+      ],
+      "city": "Hyderabad",
+      "workload": "low",
+      "pastOutcomes": [
+        {
+          "date": "2026-06",
+          "category": "functional-beverages",
+          "result": "went_ahead",
+          "note": "Printed cans"
+        }
+      ]
+    },
+    {
+      "id": "K06",
+      "name": "Small Run Labels & Packs",
+      "type": "packaging",
+      "categories": [
+        "protein-snacks",
+        "high-fibre-bars",
+        "bakery",
+        "filled-chocolates",
+        "functional-coffee",
+        "sugar-free-desserts"
+      ],
+      "capabilities": [
+        "digital printed pouches",
+        "labels",
+        "low MOQ printing"
+      ],
+      "storage": [
+        "ambient",
+        "chilled"
+      ],
+      "minBatchKg": 20,
+      "maxBatchKg": 2000,
+      "certifications": [
+        "FSSAI licence"
+      ],
+      "city": "Bangalore",
+      "workload": "medium",
+      "pastOutcomes": [
+        {
+          "date": "2026-08",
+          "category": "protein-snacks",
+          "result": "went_ahead",
+          "note": "300 printed pouches for samples"
+        },
+        {
+          "date": "2026-10",
+          "category": "functional-coffee",
+          "result": "went_ahead",
+          "note": "Sachet labels"
+        }
+      ]
+    }
+  ]
+}
