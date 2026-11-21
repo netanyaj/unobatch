@@ -1,10 +1,9 @@
-import { PARTNERS } from "./network";
 import type { LoggedOutcome } from "./store";
-
-const byId = new Map(PARTNERS.map((p) => [p.id, p]));
+import type { Partner } from "./types";
 
 /** The latest pick or outcome for each partner on one brief. */
-export function partnersForBrief(outcomes: LoggedOutcome[], briefId: string) {
+export function partnersForBrief(outcomes: LoggedOutcome[], briefId: string, partners: Partner[]) {
+  const byId = new Map(partners.map((p) => [p.id, p]));
   const latest = new Map<string, LoggedOutcome>();
   for (const o of outcomes) if (o.briefId === briefId) latest.set(o.partnerId, o);
   return [...latest.values()].map((o) => {

@@ -8,14 +8,13 @@ The point: matching should be explainable and checkable, not a black box. The ga
 
 ## What it does
 
-1. **Brief.** Category, stage, claims, storage, target shelf life, first batch size, city, and a free-text "where are you stuck" box.
-2. **What we understood.** The stuck box is turned into problem tags, for example "texture problem" or "shelf life too short". You can add or remove tags before matching.
-3. **Project path.** The tool picks which kinds of partner are needed (technologist, ingredient supplier, lab, pilot facility, packaging, manufacturer) and in what order. The order depends on the stage and the problem tags.
-4. **Ranked partners.** A summary table shows every step with its best partner, score and whether the network covers it. Click a row to open a side panel with the top 3 partners. "Why 82?" breaks each score into reasons that add up to the total. Any gap is called out in that step.
-5. **Partner details.** Click a name to see all fields and past intros.
-6. **Outcome logging.** Pick a partner, then log how it went: intro accepted, declined, project went ahead, or didn't work, with a reason. The list re-ranks straight away and shows the score change.
-7. **Briefs.** Every brief that's been matched, with the partners picked for it and how each intro went. Open one to see its results again, with earlier picks marked. Matches are re-run with current data.
-8. **Network gaps.** A summary of the gaps across every brief so far, grouped by the kind of partner to recruit.
+The app is one loop: brief in, partners picked, outcomes logged, gaps recruited, briefs matched again.
+
+1. **Pipeline.** The home page is a board of every brief, in five columns: New, Intros out, In progress, Blocked by a gap, and Done. Each card shows its steps as small bars and the next thing to do. Cards move on their own as you pick partners and log outcomes.
+2. **New brief.** Category, stage, claims, storage, target shelf life, first batch size, city, and a free-text "where are you stuck" box. The stuck box is turned into problem tags, for example "texture problem" or "shelf life too short", which you can change before saving. The brief then lands on the board with its panel open.
+3. **Brief panel.** Click a card to open it. The panel lists the partners the project needs, in order (technologist, ingredient supplier, lab, pilot facility, packaging, manufacturer), each with its state: to pick, intro sent, accepted, went ahead, or no partner fits. Open a step to see the top 3 partners. "Why 82?" breaks each score into reasons that add up to the total.
+4. **Outcome logging.** Pick a partner, then log how it went: intro accepted, declined, project went ahead, or didn't work, with a reason. The partners re-rank straight away, the step changes state, and the card moves on the board.
+5. **Recruiting.** Every gap on unfinished briefs, grouped by the partner that would close it, with the briefs waiting on it. Add a partner from a row (the form is filled in from the gap) and the waiting briefs are matched again. The page says which briefs can now pick a partner for that step.
 
 ## Run it locally
 
@@ -30,7 +29,7 @@ Optional settings go in `.env.local`. The app works without any of them.
 |---|---|---|
 | `ANTHROPIC_API_KEY` | Claude reads the "stuck" box | Keyword rules read it instead |
 | `ANTHROPIC_MODEL` | Override the model (default `claude-haiku-5-5`) | Uses the default |
-| `DATABASE_URL` | Neon Postgres for logged outcomes and briefs (Vercel sets this when you add Neon) | Kept in memory until the server restarts |
+| `DATABASE_URL` | Neon Postgres for briefs, logged outcomes and added partners (Vercel sets this when you add Neon) | Kept in memory until the server restarts |
 
 To re-run the matcher on the six test briefs from the command line, run `npm run check`.
 
@@ -70,4 +69,4 @@ Only one place uses AI: turning the "where are you stuck" text into problem tags
 
 ## Stack
 
-Next.js 15 (App Router) with TypeScript, Tailwind and shadcn/ui (components in `src/components/ui`, settings in `components.json`). Partner data is a JSON file. Outcomes and briefs go to Neon Postgres when `DATABASE_URL` is set. There is no login.
+Next.js 15 (App Router) with TypeScript, Tailwind and shadcn/ui (components in `src/components/ui`, settings in `components.json`). The 60 sample partners are a JSON file. Briefs, outcomes and partners added from the Recruiting page go to Neon Postgres when `DATABASE_URL` is set. There is no login.

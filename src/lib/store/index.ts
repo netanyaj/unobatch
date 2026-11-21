@@ -1,4 +1,4 @@
-import type { Brief, OutcomeResult } from "../types";
+import type { Brief, OutcomeResult, Partner } from "../types";
 import { memoryStore } from "./memory";
 import { postgresStore } from "./postgres";
 
@@ -27,6 +27,9 @@ export interface Store {
   listBriefs(): Promise<SavedBrief[]>;
   getBrief(id: string): Promise<SavedBrief | null>;
   addBrief(b: Omit<SavedBrief, "id" | "createdAt">): Promise<SavedBrief>;
+  /** Partners the team added from the Recruiting page, on top of the sample network. */
+  listPartners(): Promise<Partner[]>;
+  addPartner(p: Omit<Partner, "id">): Promise<Partner>;
 }
 
 /** Uses the hosted database when one is connected, otherwise keeps things in memory. */

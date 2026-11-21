@@ -1,5 +1,5 @@
-import GapsView from "@/components/GapsView";
+import { redirect } from "next/navigation";
 
 export default function GapsPage() {
-  return <GapsView />;
+  redirect("/recruiting");
 }

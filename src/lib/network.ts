@@ -18,7 +18,13 @@ export function toOutcomeMap(rows: LoggedOutcome[]): Record<string, Outcome[]> {
   return map;
 }
 
+/** The sample network plus any partners the team has added. */
+export async function getPartners(): Promise<Partner[]> {
+  return [...PARTNERS, ...(await getStore().listPartners())];
+}
+
 export async function runMatch(brief: Brief) {
-  const outcomes = await getStore().listOutcomes();
-  return match(brief, PARTNERS, toOutcomeMap(outcomes));
+  const store = getStore();
+  const [outcomes, partners] = await Promise.all([store.listOutcomes(), getPartners()]);
+  return match(brief, partners, toOutcomeMap(outcomes));
 }

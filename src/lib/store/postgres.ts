@@ -1,4 +1,5 @@
 import { neon } from "@neondatabase/serverless";
+import type { Partner } from "../types";
 import type { LoggedOutcome, SavedBrief, Store } from "./index";
 
 /** Neon Postgres store. Tables are created on first use. */
@@ -14,6 +15,8 @@ export function postgresStore(url: string): Store {
       sql`CREATE TABLE IF NOT EXISTS briefs (
         id SERIAL PRIMARY KEY, brief JSONB NOT NULL, gaps JSONB NOT NULL,
         created_at TIMESTAMPTZ NOT NULL DEFAULT now())`,
+      sql`CREATE TABLE IF NOT EXISTS added_partners (
+        id SERIAL PRIMARY KEY, partner JSONB NOT NULL, created_at TIMESTAMPTZ NOT NULL DEFAULT now())`,
     ]).then(() => sql`ALTER TABLE outcomes ADD COLUMN IF NOT EXISTS brief_id TEXT`));
   const toOutcome = (r: Record<string, unknown>): LoggedOutcome => ({
     id: String(r.id), partnerId: r.partner_id as string, category: r.category as string,
@@ -38,6 +41,16 @@ export function postgresStore(url: string): Store {
       return rows.map((r): SavedBrief => ({
         id: String(r.id), createdAt: new Date(r.created_at).toISOString(), brief: r.brief, gaps: r.gaps,
       }));
+    },
+    async listPartners() {
+      await init();
+      const rows = await sql`SELECT * FROM added_partners ORDER BY id`;
+      return rows.map((r): Partner => ({ ...(r.partner as Omit<Partner, "id">), id: `N${String(r.id).padStart(2, "0")}` }));
+    },
+    async addPartner(p) {
+      await init();
+      const rows = await sql`INSERT INTO added_partners (partner) VALUES (${JSON.stringify(p)}::jsonb) RETURNING id`;
+      return { ...p, id: `N${String(rows[0].id).padStart(2, "0")}` };
     },
     async getBrief(briefId) {
       await init();

@@ -1,5 +1,5 @@
-import BriefsView from "@/components/BriefsView";
+import { redirect } from "next/navigation";
 
 export default function BriefsPage() {
-  return <BriefsView />;
+  redirect("/");
 }

@@ -1,6 +1,10 @@
-import MatchApp from "@/components/MatchApp";
+import { Suspense } from "react";
+import Board from "@/components/Board";
 
-export default async function Home({ searchParams }: { searchParams: Promise<{ brief?: string }> }) {
-  const { brief } = await searchParams;
-  return <MatchApp key={brief ?? "new"} initialBriefId={brief ?? null} />;
+export default function Home() {
+  return (
+    <Suspense>
+      <Board />
+    </Suspense>
+  );
 }

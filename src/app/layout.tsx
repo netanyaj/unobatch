@@ -22,10 +22,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               Partner match
             </Link>
             <nav className="flex gap-1">
-              <Button variant="ghost" size="sm" asChild><Link href="/">New brief</Link></Button>
-              <Button variant="ghost" size="sm" asChild><Link href="/briefs">Briefs</Link></Button>
-              <Button variant="ghost" size="sm" asChild><Link href="/gaps">Network gaps</Link></Button>
+              <Button variant="ghost" size="sm" asChild><Link href="/">Pipeline</Link></Button>
+              <Button variant="ghost" size="sm" asChild><Link href="/recruiting">Recruiting</Link></Button>
             </nav>
+            <Button size="sm" asChild className="order-last"><Link href="/new">New brief</Link></Button>
             <Badge variant="outline" className="ml-auto rounded-full border-amber-300 bg-amber-50 px-3 py-1 text-amber-800">
               Sample data, not First Batch&apos;s real network
             </Badge>

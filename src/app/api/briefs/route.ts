@@ -1,18 +1,22 @@
 import { NextResponse } from "next/server";
-import { partnersForBrief } from "@/lib/briefs";
-import { match } from "@/lib/match";
-import { PARTNERS } from "@/lib/network";
+import { runMatch } from "@/lib/network";
 import { getStore } from "@/lib/store";
+import { TEST_BRIEFS } from "@/lib/testBriefs";
 
-export async function GET() {
+/** Adds the six example briefs to the board, skipping any already there. */
+export async function POST() {
   const store = getStore();
-  const [briefs, outcomes] = await Promise.all([store.listBriefs(), store.listOutcomes()]);
-  const rows = [...briefs]
-    .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
-    .map((b) => ({
-      id: b.id, createdAt: b.createdAt, brief: b.brief, gaps: b.gaps,
-      steps: match(b.brief, PARTNERS).steps.map((s) => s.type),
-      partners: partnersForBrief(outcomes, b.id),
-    }));
-  return NextResponse.json({ briefs: rows, storage: store.kind });
+  const have = new Set((await store.listBriefs()).map((b) => b.brief.productName));
+  let added = 0;
+  for (const { expect: _e, ...brief } of [...TEST_BRIEFS].reverse()) {
+    void _e;
+    if (have.has(brief.productName)) continue;
+    const result = await runMatch(brief);
+    await store.addBrief({
+      brief,
+      gaps: result.steps.filter((s) => s.gap).map((s) => ({ step: s.type, text: s.gap!, recruit: s.recruit! })),
+    });
+    added++;
+  }
+  return NextResponse.json({ added });
 }
