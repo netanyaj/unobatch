@@ -14,11 +14,11 @@ export function postgresStore(url: string): Store {
       sql`CREATE TABLE IF NOT EXISTS briefs (
         id SERIAL PRIMARY KEY, brief JSONB NOT NULL, gaps JSONB NOT NULL,
         created_at TIMESTAMPTZ NOT NULL DEFAULT now())`,
-    ]));
+    ]).then(() => sql`ALTER TABLE outcomes ADD COLUMN IF NOT EXISTS brief_id TEXT`));
   const toOutcome = (r: Record<string, unknown>): LoggedOutcome => ({
     id: String(r.id), partnerId: r.partner_id as string, category: r.category as string,
     result: r.result as LoggedOutcome["result"], note: r.note as string,
-    briefName: r.brief_name as string, createdAt: new Date(r.created_at as string).toISOString(),
+    briefName: r.brief_name as string, briefId: (r.brief_id as string | null) ?? null, createdAt: new Date(r.created_at as string).toISOString(),
   });
   return {
     kind: "database",
@@ -28,8 +28,8 @@ export function postgresStore(url: string): Store {
     },
     async addOutcome(o) {
       await init();
-      const rows = await sql`INSERT INTO outcomes (partner_id, category, result, note, brief_name)
-        VALUES (${o.partnerId}, ${o.category}, ${o.result}, ${o.note}, ${o.briefName}) RETURNING *`;
+      const rows = await sql`INSERT INTO outcomes (partner_id, category, result, note, brief_name, brief_id)
+        VALUES (${o.partnerId}, ${o.category}, ${o.result}, ${o.note}, ${o.briefName}, ${o.briefId}) RETURNING *`;
       return toOutcome(rows[0]);
     },
     async listBriefs() {
@@ -38,6 +38,13 @@ export function postgresStore(url: string): Store {
       return rows.map((r): SavedBrief => ({
         id: String(r.id), createdAt: new Date(r.created_at).toISOString(), brief: r.brief, gaps: r.gaps,
       }));
+    },
+    async getBrief(briefId) {
+      await init();
+      if (!/^\d+$/.test(briefId)) return null;
+      const rows = await sql`SELECT * FROM briefs WHERE id = ${Number(briefId)}`;
+      const r = rows[0];
+      return r ? { id: String(r.id), createdAt: new Date(r.created_at).toISOString(), brief: r.brief, gaps: r.gaps } : null;
     },
     async addBrief(b) {
       await init();

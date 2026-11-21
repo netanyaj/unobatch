@@ -23,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
             <nav className="flex gap-1">
               <Button variant="ghost" size="sm" asChild><Link href="/">New brief</Link></Button>
+              <Button variant="ghost" size="sm" asChild><Link href="/briefs">Briefs</Link></Button>
               <Button variant="ghost" size="sm" asChild><Link href="/gaps">Network gaps</Link></Button>
             </nav>
             <Badge variant="outline" className="ml-auto rounded-full border-amber-300 bg-amber-50 px-3 py-1 text-amber-800">

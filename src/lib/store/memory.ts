@@ -14,6 +14,7 @@ export const memoryStore: Store = {
     return row;
   },
   async listBriefs() { return data.briefs; },
+  async getBrief(briefId) { return data.briefs.find((b) => b.id === briefId) ?? null; },
   async addBrief(b) {
     const row = { ...b, id: id(), createdAt: new Date().toISOString() };
     data.briefs.push(row);

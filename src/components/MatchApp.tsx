@@ -10,6 +10,7 @@ import BriefForm, { EMPTY_BRIEF } from "./BriefForm";
 import IssueReview from "./IssueReview";
 import PartnerCard, { type CardStatus } from "./PartnerCard";
 import PartnerDrawer from "./PartnerDrawer";
+import type { BriefPartner } from "@/lib/briefs";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -18,7 +19,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight, ChevronDown, ChevronRight, TriangleAlert, X } from "lucide-react";
 
-type View = "form" | "issues" | "results";
+type View = "loading" | "form" | "issues" | "results";
 
 const FACTORS: [keyof typeof WEIGHTS, string][] = [
   ["experience", "Has worked in this category, plus extra for past projects in it that went ahead."],
@@ -51,9 +52,9 @@ function ScoreHelp() {
   );
 }
 
-export default function MatchApp() {
+export default function MatchApp({ initialBriefId = null }: { initialBriefId?: string | null }) {
   const [brief, setBrief] = useState<Brief>(EMPTY_BRIEF);
-  const [view, setView] = useState<View>("form");
+  const [view, setView] = useState<View>(initialBriefId ? "loading" : "form");
   const [source, setSource] = useState<"llm" | "keywords">("keywords");
   const [result, setResult] = useState<MatchResult | null>(null);
   const [prevScores, setPrevScores] = useState<Record<string, number>>({});
@@ -72,10 +73,31 @@ export default function MatchApp() {
   };
   useEffect(() => { loadOutcomes(); }, []);
 
+  // Reopening a saved brief from the Briefs page: load it, match again, and mark earlier picks.
+  const [briefId, setBriefId] = useState<string | null>(initialBriefId);
+  const [reopened, setReopened] = useState<string | null>(null);
+  useEffect(() => {
+    if (!initialBriefId) return;
+    (async () => {
+      const r = await fetch(`/api/briefs/${encodeURIComponent(initialBriefId)}`);
+      if (!r.ok) { setView("form"); return; }
+      const saved = (await r.json()) as { brief: Brief; createdAt: string; partners: BriefPartner[] };
+      setBrief(saved.brief);
+      const marks: Record<string, CardStatus> = {};
+      for (const p of saved.partners)
+        marks[p.partnerId] = p.result === "picked" ? { state: "picked" } : { state: "logged", result: p.result };
+      setStatus(marks);
+      await runMatch(saved.brief, false);
+      setReopened(saved.createdAt);
+      setView("results");
+    })();
+  }, [initialBriefId]);
+
   const runMatch = async (b: Brief, save: boolean) => {
     const r = await fetch("/api/match", { method: "POST", body: JSON.stringify({ brief: b, save }) }).then((r) => r.json());
     setResult(r.result);
     setStorage(r.storage);
+    if (save) setBriefId(r.briefId ?? null);
     return r.result as MatchResult;
   };
 
@@ -91,7 +113,7 @@ export default function MatchApp() {
 
   const confirm = async (b: Brief = brief) => {
     setBusy(true);
-    setPrevScores({}); setChanged(null); setStatus({}); setOpen(null);
+    setPrevScores({}); setChanged(null); setStatus({}); setOpen(null); setReopened(null);
     await runMatch(b, true);
     setBusy(false);
     setView("results");
@@ -101,7 +123,7 @@ export default function MatchApp() {
   const logOutcome = async (partnerId: string, res: OutcomeResult | "picked", note = "") => {
     await fetch("/api/outcomes", {
       method: "POST",
-      body: JSON.stringify({ partnerId, category: brief.category, result: res, note, briefName: brief.productName || categoryLabel(brief.category) }),
+      body: JSON.stringify({ partnerId, category: brief.category, result: res, note, briefName: brief.productName || categoryLabel(brief.category), briefId }),
     });
     if (res === "picked") { setStatus((s) => ({ ...s, [partnerId]: { state: "picked" } })); await loadOutcomes(); return; }
     // Remember scores before re-ranking so the change is visible.
@@ -114,6 +136,7 @@ export default function MatchApp() {
     await runMatch(brief, false);
   };
 
+  if (view === "loading") return <p className="text-sm text-muted-foreground">Opening saved brief…</p>;
   if (view === "form")
     return <BriefForm brief={brief} setBrief={setBrief} onSubmit={submitBrief} busy={busy} />;
   if (view === "issues")
@@ -142,6 +165,12 @@ export default function MatchApp() {
             {brief.batchKg.toLocaleString("en-IN")} kg first batch · {brief.city}
           </p>
         </div>
+        {reopened && (
+          <p className="mt-1 text-xs text-muted-foreground">
+            Saved brief from {new Date(reopened).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}.
+            Matches are re-run with today&apos;s data; earlier picks are marked.
+          </p>
+        )}
         {issueLabels.length > 0 && (
           <div className="mt-2 flex flex-wrap items-center gap-1.5 text-sm">
             <span className="text-muted-foreground">Stuck on</span>
@@ -202,6 +231,12 @@ export default function MatchApp() {
                           <div className="text-xs text-muted-foreground">
                             {top.partner.city}{step.matches.length > 1 && <> · {step.matches.length - 1} more</>}
                           </div>
+                          {(() => {
+                            const picked = step.matches.find((m) => (status[m.partner.id]?.state ?? "none") !== "none");
+                            return picked && (
+                              <Badge variant="secondary" className="mt-1 bg-sky-100 text-sky-800">Picked: {picked.partner.name}</Badge>
+                            );
+                          })()}
                         </>
                       ) : <span className="text-muted-foreground">No partner fits</span>}
                     </TableCell>

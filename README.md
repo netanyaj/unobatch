@@ -14,7 +14,8 @@ The point: matching should be explainable and checkable, not a black box. The ga
 4. **Ranked partners.** A summary table shows every step with its best partner, score and whether the network covers it. Click a row to open a side panel with the top 3 partners. "Why 82?" breaks each score into reasons that add up to the total. Any gap is called out in that step.
 5. **Partner details.** Click a name to see all fields and past intros.
 6. **Outcome logging.** Pick a partner, then log how it went: intro accepted, declined, project went ahead, or didn't work, with a reason. The list re-ranks straight away and shows the score change.
-7. **Network gaps.** A summary of the gaps across every brief so far, grouped by the kind of partner to recruit.
+7. **Briefs.** Every brief that's been matched, with the partners picked for it and how each intro went. Open one to see its results again, with earlier picks marked. Matches are re-run with current data.
+8. **Network gaps.** A summary of the gaps across every brief so far, grouped by the kind of partner to recruit.
 
 ## Run it locally
 

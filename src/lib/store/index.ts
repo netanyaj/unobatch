@@ -9,6 +9,7 @@ export interface LoggedOutcome {
   result: OutcomeResult | "picked";
   note: string;
   briefName: string;
+  briefId: string | null; // the saved brief this pick or outcome belongs to
   createdAt: string;
 }
 
@@ -24,6 +25,7 @@ export interface Store {
   listOutcomes(): Promise<LoggedOutcome[]>;
   addOutcome(o: Omit<LoggedOutcome, "id" | "createdAt">): Promise<LoggedOutcome>;
   listBriefs(): Promise<SavedBrief[]>;
+  getBrief(id: string): Promise<SavedBrief | null>;
   addBrief(b: Omit<SavedBrief, "id" | "createdAt">): Promise<SavedBrief>;
 }
 

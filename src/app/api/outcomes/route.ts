@@ -15,6 +15,7 @@ export async function POST(req: Request) {
   const row = await getStore().addOutcome({
     partnerId: body.partnerId, category: String(body.category ?? ""), result: body.result,
     note: String(body.note ?? "").slice(0, 300), briefName: String(body.briefName ?? "").slice(0, 120),
+    briefId: typeof body.briefId === "string" ? body.briefId.slice(0, 40) : null,
   });
   return NextResponse.json({ outcome: row });
 }
